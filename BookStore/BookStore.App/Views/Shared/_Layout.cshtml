@@ -1,0 +1,75 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>@ViewBag.Title - Bookstore Imagination</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+</head>
+<body>
+    <div class="container-fluid home" id="top">
+        <div class="row text-center">
+            <div class="store-title">
+                <h1>Bookstore <span>&quot;Imagination&quot;</span></h1>          
+                <p class="lead">Spend your days with imagination.</p>           
+                <p class="lead">Spend your money at Bookstore &quot;Imagination&quot;</p>
+            </div>
+            @Html.Partial("_MessagesPartial")
+        </div>
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+                <h2>@ViewBag.Title</h2>
+            </div>
+        </div>
+    </div>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+
+                <ul class="nav navbar-nav">
+                    @if (User.IsInRole("Admin"))
+                    {
+                        <li class="navbar-brand btn btn-default lead">
+                            @Html.ActionLink("Admin panel", "AllCategories", "Categories", new { area = "Admin" }, new { @class = "navbar-brand btn btn-default" })
+                        </li>
+                    }
+                    <li>
+                        <a href="/Home/Index" class="navbar-brand">
+                            <img src="~/Content/Images/NavBar/home-2-64.png" class="img-rounded" alt="home-icon" />
+                        </a>
+                    </li>
+                </ul>
+
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+
+            <div class="navbar-collapse collapse">
+                @Html.Partial("_NavbarDropdawnSearchPartial")
+                @Html.Partial("_NavbarDropdownMenuPartial")
+                @Html.Partial("_LoginPartial")
+            </div>
+        </div>
+    </nav>
+
+    <div class="container-fluid user-body-content">
+        <div class="col-xs-10 col-xs-offset-1 col-md-12 col-md-offset-0">
+            @RenderBody()
+        </div>
+        @Html.Partial("_BackNextTopButtonsPartial")      
+        <hr />
+    </div>
+    @Html.Partial("_Footer")
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

@@ -415,6 +415,8 @@
     <Content Include="Areas\Admin\Views\Shared\DisplayTemplates\CategoryViewModel.cshtml" />
     <Content Include="Areas\Admin\Views\Books\_AddThisBookInCategoryPartial.cshtml" />
     <Content Include="Areas\Admin\Views\Books\_AddAuthorToThisBookPartial.cshtml" />
+    <None Include="Properties\PublishProfiles\BookstoreInspiration - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\BookstoreInspiration - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-3.1.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -488,8 +490,8 @@
     <Content Include="Scripts\jquery-3.1.1.min.map" />
     <Content Include="Views\Books\_AddReviewPartial.cshtml" />
     <Content Include="Views\Books\_AddRatingPartial.cshtml" />
-    <None Include="Views\Categories\All.cshtml" />
-    <None Include="Views\Categories\BooksByCategory.cshtml" />
+    <Content Include="Views\Categories\All.cshtml" />
+    <Content Include="Views\Categories\BooksByCategory.cshtml" />
     <Content Include="Views\Categories\BestSellers.cshtml" />
     <Content Include="Views\Shared\_NavbarDropdawnSearchPartial.cshtml" />
     <Content Include="Views\Shared\_Footer.cshtml" />
